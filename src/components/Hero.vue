@@ -11,7 +11,3 @@ export default {
   name: 'LoopsHero'
 }
 </script>
-
-<style>
-
-</style>
