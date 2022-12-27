@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col items-center">
     <Navbar />
     <main class="bg-gray-500">
       <Hero />
