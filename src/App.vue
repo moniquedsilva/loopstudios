@@ -1,21 +1,24 @@
 <template>
   <div class="flex flex-col items-center">
-    <Navbar />
+    <Header />
     <main class="bg-gray-500">
       <Hero />
+      <About />
     </main>
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
+import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
+import About from './components/About.vue'
 
 export default {
   name: 'App',
   components: {
-    Navbar,
-    Hero
+    Header,
+    Hero,
+    About
   }
 }
 </script>
