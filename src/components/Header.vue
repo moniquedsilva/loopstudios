@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed w-full max-w-[1138px] flex p-6 transition-transition duration-300" :class="menuOpen ? 'h-screen bg-brand-black inset-0 items-start flex-col' : 'h-[105px] justify-between items-center'">
+  <header class="absolute w-full max-w-[1138px] flex p-6 transition-transition duration-300 z-10" :class="menuOpen ? 'h-screen bg-brand-black inset-0 items-start flex-col' : 'h-[105px] justify-between items-center'">
     <div class="w-full flex justify-between md:w-max">
       <a href="#home">
         <img src="/assets/logo.svg" alt="Logo" class="w-44 h-max md:w-48">
