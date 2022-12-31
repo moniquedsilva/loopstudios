@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full border-none bg-brand-white relative">
+  <div id="about" class="w-full border-none bg-brand-white relative">
     <div class="mx-auto flex flex-col items-center w-full max-w-[1138px] px-6 pt-32 pb-16 lg:flex-row lg:justify-end lg:items-end lg:pr-0">
       <picture class="w-full">
         <img src="/assets/desktop/image-interactive.jpg" alt="Man VR" class="w-full mx-auto max-w-[730px] lg:mx-0">
