@@ -4,6 +4,7 @@
     <main class="bg-gray-500">
       <Hero />
       <About />
+      <Footer />
     </main>
   </div>
 </template>
@@ -12,13 +13,15 @@
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
 import About from './components/About.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Hero,
-    About
+    About,
+    Footer
   }
 }
 </script>
