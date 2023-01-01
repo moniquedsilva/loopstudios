@@ -1,26 +1,21 @@
 <template>
-  <header class="absolute w-full max-w-[1138px] flex p-6 transition-transition duration-300 z-10" :class="menuOpen ? 'h-screen bg-brand-black inset-0 items-start flex-col' : 'h-[105px] justify-between items-center'">
-    <div class="w-full flex justify-between md:w-max">
-      <a href="#home">
+  <header class="mx-auto w-full max-w-[1138px] absolute z-20">
+    <nav class="w-full flex flex-wrap items-start p-6 transition-all" :class="{ 'bg-brand-black h-screen md:bg-transparent md:h-max' : menuOpen}">
+      <a href="#home" class="w-2/4 shrink-0">
         <img src="/assets/logo.svg" alt="Logo" class="w-44 h-max md:w-48" />
       </a>
-      <button @click="toogleMenu" class="cursor-pointer transition-all rotate-0 duration-700 ease-out md:hidden" :class="{'rotate-180': menuOpen}">
-        <img :src="menuOpen ? closeButton : hamburgerButton" alt="Menu">
-      </button>
-    </div>
-    <nav v-if="menuOpen" class="w-full h-full flex flex-col justify-center">
-      <ul class="pl-8 flex flex-col gap-y-4 absolute w-full overflow-hidden bg-brand-black left-0 right-0 font-josefin-sans uppercase">
-        <li v-for="link in navLinks" :key="link.name">
-          <a :href="link.href" class="nav__links text-white text-2xl font-bold hover:text-brand-dark-gray transition-all ease-out">{{ link.name }}</a>
-        </li>
-      </ul>
-    </nav>
-    <nav v-else class="hidden md:block">
-      <ul class="space-x-8">
-        <li v-for="link in navLinks" :key="link.name" class="inline-block">
-          <a :href="link.href" class="nav__links text-white text-[15px] font-semibold ease-out transition-all">{{ link.name }}</a>
-        </li>
-      </ul>
+      <div class="flex justify-end w-2/4 shrink-0 md:hidden">
+        <button type="button" @click="toogleMenu" data-toggle aria-controls="NavigationCollapse" :aria-expanded="menuOpen" aria-label="Toggle navigation" class="cursor-pointer transition-all rotate-0 duration-700 ease-out outline-none border-none" :class="{'rotate-180': menuOpen}">
+          <img :src="menuOpen ? closeButton : hamburgerButton" alt="Menu" />
+        </button>
+      </div>
+      <div id="NavigationCollapse" class="w-full md:w-2/4 md:block" :class="{ 'hidden' : !menuOpen}">
+        <ul class="flex flex-col gap-8 md:flex-row md:justify-end">
+          <li v-for="link in navLinks" :key="link.name">
+            <a :href="link.href" class="nav__links text-white text-2xl font-josefin-sans md:font-alata uppercase font-bold transition-all ease-out md:text-[15px] md:capitalize">{{ link.name }}</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 </template>
