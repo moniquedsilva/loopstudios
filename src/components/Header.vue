@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style scoped>
-.nav__links:after {
+.nav__links::after {
   content: "";
   display: block;
   width: 0;
@@ -71,7 +71,7 @@ export default {
   background: none repeat scroll 0 0 rgb(255, 255, 255);
   transition: all ease-in-out 0.3s;
 }
-.nav__links:hover:after {
+.nav__links:hover::after {
   width: 24px;
 }
 </style>
