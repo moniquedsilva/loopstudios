@@ -1,25 +1,38 @@
 <template>
-  <div id="home" class="h-screen mb-[184px]">
-    <div class="mx-auto w-full max-w-[1138px] flex items-center justify-center lg:justify-start absolute inset-0 p-6">
-      <h1 class="max-w-[327px] md:max-w-[652px] h-max p-6 pb-4 font-josefin-sans leading-none uppercase tracking-wide text-[40px] md:text-7xl text-white border-[3px] border-white z-[2]">Immersive experiences that deliver</h1>
+  <div id="home" class="mb-[184px] h-screen">
+    <div
+      class="absolute inset-0 mx-auto flex w-full max-w-[1138px] items-center justify-center p-6 lg:justify-start"
+    >
+      <h1
+        class="z-[2] h-max max-w-[327px] border-[3px] border-white p-6 pb-4 font-josefin-sans text-[40px] uppercase leading-none tracking-wide text-white md:max-w-[652px] md:text-7xl"
+      >
+        Immersive experiences that deliver
+      </h1>
     </div>
     <picture class="hero h-full w-full">
-      <source srcset="/assets/desktop/image-hero.jpg" media="(min-width: 750px)">
-      <img src="/assets/mobile/image-hero.jpg" alt="hero image" class="w-full h-full object-cover">
+      <source
+        srcset="/assets/desktop/image-hero.jpg"
+        media="(min-width: 750px)"
+      />
+      <img
+        src="/assets/mobile/image-hero.jpg"
+        alt="hero image"
+        class="h-full w-full object-cover"
+      />
     </picture>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'LoopsHero'
-}
+  name: "LoopsHero",
+};
 </script>
 
 <style scoped>
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   .hero::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;

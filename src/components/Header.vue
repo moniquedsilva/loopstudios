@@ -1,18 +1,40 @@
 <template>
-  <header class="mx-auto w-full max-w-[1138px] absolute z-20">
-    <nav class="w-full flex flex-wrap items-start p-6 transition-all" :class="{ 'bg-brand-black h-screen md:bg-transparent md:h-max' : menuOpen}">
+  <header class="absolute z-20 mx-auto w-full max-w-[1138px]">
+    <nav
+      class="flex w-full flex-wrap items-start p-6 transition-all"
+      :class="{
+        'h-screen bg-brand-black md:h-max md:bg-transparent': menuOpen,
+      }"
+    >
       <a href="#home" class="w-2/4 shrink-0">
-        <img src="/assets/logo.svg" alt="Logo" class="w-44 h-max md:w-48" />
+        <img src="/assets/logo.svg" alt="Logo" class="h-max w-44 md:w-48" />
       </a>
-      <div class="flex justify-end w-2/4 shrink-0 md:hidden">
-        <button type="button" @click="toogleMenu" data-toggle aria-controls="NavigationCollapse" :aria-expanded="menuOpen" aria-label="Toggle navigation" class="cursor-pointer transition-all rotate-0 duration-700 ease-out outline-none border-none" :class="{'rotate-180': menuOpen}">
+      <div class="flex w-2/4 shrink-0 justify-end md:hidden">
+        <button
+          type="button"
+          @click="toogleMenu"
+          data-toggle
+          aria-controls="NavigationCollapse"
+          :aria-expanded="menuOpen"
+          aria-label="Toggle navigation"
+          class="rotate-0 cursor-pointer border-none outline-none transition-all duration-700 ease-out"
+          :class="{ 'rotate-180': menuOpen }"
+        >
           <img :src="menuOpen ? closeButton : hamburgerButton" alt="Menu" />
         </button>
       </div>
-      <div id="NavigationCollapse" class="w-full md:w-2/4 md:block" :class="{ 'hidden' : !menuOpen}">
+      <div
+        id="NavigationCollapse"
+        class="w-full md:block md:w-2/4"
+        :class="{ hidden: !menuOpen }"
+      >
         <ul class="flex flex-col gap-8 md:flex-row md:justify-end">
           <li v-for="link in navLinks" :key="link.name">
-            <a :href="link.href" class="nav__links text-white text-2xl font-josefin-sans md:font-alata uppercase font-bold transition-all ease-out md:text-[15px] md:capitalize">{{ link.name }}</a>
+            <a
+              :href="link.href"
+              class="nav__links font-josefin-sans text-2xl font-bold uppercase text-white transition-all ease-out md:font-alata md:text-[15px] md:capitalize"
+              >{{ link.name }}</a
+            >
           </li>
         </ul>
       </div>
@@ -22,42 +44,42 @@
 
 <script>
 export default {
-  name: 'LoopsHeader',
+  name: "LoopsHeader",
   data() {
     return {
       menuOpen: false,
-      hamburgerButton: '/assets/icon-hamburger.svg',
-      closeButton: '/assets/icon-close.svg',
+      hamburgerButton: "/assets/icon-hamburger.svg",
+      closeButton: "/assets/icon-close.svg",
       navLinks: [
         {
-          name: 'About',
-          href: '#about'
+          name: "About",
+          href: "#about",
         },
         {
-          name: 'Careers',
-          href: '#careers'
+          name: "Careers",
+          href: "#careers",
         },
         {
-          name: 'Events',
-          href: '#events'
+          name: "Events",
+          href: "#events",
         },
         {
-          name: 'Products',
-          href: '#products'
+          name: "Products",
+          href: "#products",
         },
         {
-          name: 'Support',
-          href: '#support'
-        }
-      ]
-    }
+          name: "Support",
+          href: "#support",
+        },
+      ],
+    };
   },
   methods: {
     toogleMenu() {
-      this.menuOpen = !this.menuOpen
-    }
-  }
-}
+      this.menuOpen = !this.menuOpen;
+    },
+  },
+};
 </script>
 
 <style scoped>
